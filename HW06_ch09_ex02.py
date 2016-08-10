@@ -14,11 +14,27 @@
 # Imports
 
 # Body
+def has_no_e(word):
+    if(word.strip().find('e') == -1):
+        return True
+    else:
+        return False
 
 
+def print_no_e():
+    file_object = open("words.txt")
+    total_no_of_words = 0
+    no_of_words_without_e = 0
+    for word in file_object:
+        total_no_of_words += 1
+        if(has_no_e(word)):
+            no_of_words_without_e += 1
+            print(word.strip())
+    print("Percentage of words without the character 'e' is " + str((no_of_words_without_e*100) / total_no_of_words)+"%")
+    file_object.close()
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    print_no_e()
 
 if __name__ == '__main__':
     main()

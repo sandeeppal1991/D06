@@ -17,11 +17,22 @@
 # Imports
 
 # Body
+def uses_only(word, string_of_letters):
+    for each_letter in word:
+        if(each_letter not in string_of_letters):
+            return False
+    return True
 
+def sentence_generator():
+    with open("words.txt","r") as file_object:
+        for each_line in file_object:
+            if(uses_only(each_line.strip(),"acefhlo")):
+                print(each_line.strip())
+    file_object.close()
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    sentence_generator()
 
 if __name__ == '__main__':
     main()
