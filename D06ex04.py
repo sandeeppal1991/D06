@@ -13,7 +13,7 @@ def write_names():
         with open("namesFile.txt", "w") as write_object:
             for each_line in read_object:
                 name = each_line.split(' ')[0];
-                if("e" in name):
+                if("e" in name or "E" in name):
                     write_object.write(name + "\n")
         write_object.close()
     read_object.close()

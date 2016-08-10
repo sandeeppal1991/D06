@@ -12,10 +12,11 @@ def print_names():
         count_of_names = 0
         for each_line in file_object:
             name = each_line.split(' ')[0];
-            if("e" in name):
+            if("e" in name or "E" in name):
                 print(name)
                 count_of_names += 1
         print("\n\nNames containing the letter 'e' are : " + str(count_of_names))
+    file_object.close()
 
 ###############################################################
 #main
